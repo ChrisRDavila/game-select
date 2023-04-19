@@ -1,18 +1,19 @@
 export default class GameSelect {
-  static category() {
+  static getGames(category) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      const url = `https://www.freetogame.com/api/games?category`;
+      const url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${category}&rapidapi-key=${process.env.API_KEY}`;
       request.addEventListener("load", function() {
+        const catOptions = JSON.parse(this.responseText);
         if (this.status === 200) {
-          const categories = JSON.parse(request.responseText);
-          resolve(categories);
+          resolve([catOptions, category]);
         } else {
-          reject(Error(this.statusText));
+          reject([this, catOptions, category]);
         }
       });
       request.open("GET", url, true);
       request.send();
-    }
+            
+    });
   }
 }
