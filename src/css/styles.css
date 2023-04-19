@@ -1,0 +1,14 @@
+body {
+  background-image: url('./games.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
