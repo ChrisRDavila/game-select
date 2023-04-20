@@ -1,4 +1,50 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+}
+
+nav h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
 body {
   background-image: url('./games.jpg');
   background-size: cover;
@@ -30,7 +76,7 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh
+  height: 100vh;
 }
 select {
   background-color: #3b3b3b;
@@ -91,6 +137,10 @@ button:hover {
   background-color: #4ff022;
 }
 
+.gameh2 {
+  align-items: center;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -144,8 +194,42 @@ button:hover {
 }
 
 #gif {
+  
   background-image: url('./portal.gif');
+  background-color: rgb(4, 23, 58);
+  background-blend-mode: luminosity;
+  border-radius: 200px;
   display: block;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
+  background-position: center;
+}
+
+marquee {
+  font-size: 15px;
+  font-style: oblique;
+  color: red;
+  background-color: black;
+  border: 4px dotted grey;
+  padding: 5px;
+  margin: 5px;
+  animation: blink 1s linear infinite
+}
+
+@keyframes blink {
+  50%{
+    opacity: 0;
+  }
+}
+
+h4 {
+  height: 25px;
+  overflow-y: hidden;
+  display: block;
+  animation-name: appear;
+  animation-duration: 3s;
+}
+@keyframes appear {
+  form { transform: translateY(25px)}
+  to { transform: translate(0);}
 }

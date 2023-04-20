@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game</Select></title>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Game Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <form>
-    <h4>Automated Game Selector<hr></h4> 
-    <h6>Choose a category and submit to see games<hr>with information that match your selection</h6>
+    <h4>Games Selection Portal:<hr></h4>
+    <div class="cssmarquee">
+      <marquee>Choose a category and submit to see games and info!!!</marquee>
+    </div>  
       <hr>  
-      <select id="gameList">
-      <option value="" required> ---Choose Category--- </option>  
+      <select id="gameList" required>
+      <option value="" selected disabled> ---Choose Category--- </option>  
       <option value="mmorpg"> MMORPG </option>  
       <option value="shooter"> Shooter </option>  
       <option value="strategy"> Strategy </option>  
@@ -56,11 +91,12 @@
       <option value="horror"> Horror </option>  
       <option value="mmorts"> MMORTS </option>
     </select>
-    <button type="submit" id="submit">Submit</button>
+    <button type="submit" id="submit">Enter</button>
+    <div id="category"></div>
     <div class="game-container">
       <p id="showGames"></p>
       <p><span id="gif" style="visibility: visible;"></span></p>
-    </div>
+    </div>  
   </form>   
 </body>
 </html>

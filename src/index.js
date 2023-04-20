@@ -53,9 +53,10 @@ function displayGames(data) {
       gameList += card;
     }
   }
-
+  const gameCat = document.querySelector('#category')
   const showGames = document.querySelector('#showGames');
-  showGames.innerHTML = `<h2>Here are some games that match the category ${data[1]}:<h2>
+  gameCat.innerHTML = `<h2 class="gameh2">Here are some games that match the category ${data[1]}:<h2>`
+  showGames.innerHTML = `
   <div class="card-group">
    ${gameList}
   </div>`;
@@ -71,7 +72,7 @@ function handleFormSubmission(event) {
   event.preventDefault();
   const category = document.querySelector('#gameList').value;
   const errorMessage = document.getElementById("error-message");
-  document.getElementById("gif").style.visibility = "invisible"
+  document.getElementById("gif").style.visibility = "hidden"
 
   if  (!category) {
     errorMessage.innerText = "Please select a category"
@@ -79,7 +80,6 @@ function handleFormSubmission(event) {
 
   getGames(category);
   document.getElementById("submit").textContent = "See More"
-  document.getElementById("gif").style.visibilty = "invisible"
 }
 
 window.addEventListener("load", function() {
