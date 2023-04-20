@@ -18,35 +18,40 @@ function getGames(category) {
 function displayGames(data) {
   const games = data[0];
   let gameList = "";
+  const gameRandom = new Set();
 
-  for(let i=0; i < 2; i ++) {
-    const game = games[i];
-    const title = game.title;
-    const description = game.short_description;
-    const platform = game.platform;
-    const image = game.thumbnail;
-    const link = game.game_url;
-    const publisher = game.publisher; 
-    const release = game.release_date;
-    const genre = game.genre;
+  while (gameRandom.size < 4) {
+    const randomIndex = Math.floor(Math.random() * games.length);
+    if(!gameRandom.has(randomIndex)) {
+      gameRandom.add(randomIndex);
+      const game = games[randomIndex];
+      const title = game.title;
+      const description = game.short_description;
+      const platform = game.platform;
+      const image = game.thumbnail;
+      const link = game.game_url;
+      const publisher = game.publisher; 
+      const release = game.release_date;
+      const genre = game.genre;
 
-    const card = `
-    <div class ="card">
-      <img src="${image}">
-      <div class="card-body">
-        <h5>${title}</h5>
-        <p>Description: ${description}</p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Platform(s): ${platform}</li>
-          <li class="list-group-item">Genre(s): ${genre}</li>
-          <li class="list-group-item">Release Date: ${release}</li>
-          <li class="list-group-item">Publisher: ${publisher}</li>
-        </ul>
-        <a href="${link}" class="btn btn-primary">Play Now</a>
-      </div>
-    </div>`
-    ;
-    gameList += card;
+      const card = `
+      <div class ="card">
+        <img src="${image}">
+        <div class="card-body">
+          <h5>${title}</h5>
+          <p>Description: ${description}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Platform(s): ${platform}</li>
+            <li class="list-group-item">Genre(s): ${genre}</li>
+            <li class="list-group-item">Release Date: ${release}</li>
+            <li class="list-group-item">Publisher: ${publisher}</li>
+          </ul>
+          <a href="${link}" class="btn btn-primary" target="_blank" rel="noopener">Play Now</a>
+        </div>
+      </div>`
+      ;
+      gameList += card;
+    }
   }
 
   const showGames = document.querySelector('#showGames');

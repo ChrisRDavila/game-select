@@ -12,6 +12,17 @@ body {
   position: relative;
   font-family: 'Press Start 2P', sans-serif;
   color: #fff;
+  opacity: 1;
+  animation: fadeInBackground 5s ease;
+}
+
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 form {
@@ -30,6 +41,13 @@ select {
   padding: 10px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+select:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  background-color: #555;
 }
 
 p#showGames {
@@ -58,7 +76,7 @@ p#showGames {
 }
 
 button.submit {
-  background-color: #f44336;
+  background-color: #050404;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -70,7 +88,7 @@ button.submit {
 }
 
 button:hover {
-  background-color: #d32f2f;
+  background-color: #4ff022;
 }
 
 .card {
@@ -81,6 +99,11 @@ button:hover {
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   background-color: black;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
