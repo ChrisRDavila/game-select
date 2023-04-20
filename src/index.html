@@ -9,7 +9,7 @@
     <h6>Choose a category and submit to see games<hr>with information that match your selection</h6>
       <hr>  
       <select id="gameList">
-      <option value="" selected disabled> ---Choose Category--- </option>  
+      <option value="" required> ---Choose Category--- </option>  
       <option value="mmorpg"> MMORPG </option>  
       <option value="shooter"> Shooter </option>  
       <option value="strategy"> Strategy </option>  
@@ -59,6 +59,7 @@
     <button type="submit" id="submit">Submit</button>
     <div class="game-container">
       <p id="showGames"></p>
+      <p><span id="gif" style="visibility: visible;"></span></p>
     </div>
   </form>   
 </body>

@@ -142,3 +142,10 @@ button:hover {
   height: 400px;
   overflow-y: scroll;
 }
+
+#gif {
+  background-image: url('./portal.gif');
+  display: block;
+  width: 400px;
+  height: 400px;
+}

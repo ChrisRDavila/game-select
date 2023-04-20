@@ -70,13 +70,21 @@ function printError(error) {
 function handleFormSubmission(event) {
   event.preventDefault();
   const category = document.querySelector('#gameList').value;
-  getGames(category);
-  
+  const errorMessage = document.getElementById("error-message");
+  document.getElementById("gif").style.visibility = "invisible"
 
+  if  (!category) {
+    errorMessage.innerText = "Please select a category"
+  }
+
+  getGames(category);
+  document.getElementById("submit").textContent = "See More"
+  document.getElementById("gif").style.visibilty = "invisible"
 }
 
 window.addEventListener("load", function() {
   document.querySelector("form").addEventListener("submit", handleFormSubmission);
+
 });
 
 
