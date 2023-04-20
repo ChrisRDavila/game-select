@@ -19,23 +19,41 @@ function displayGames(data) {
   const games = data[0];
   let gameList = "";
 
-  for(let i=0; i < 5; i ++) {
+  for(let i=0; i < 2; i ++) {
     const game = games[i];
     const title = game.title;
     const description = game.short_description;
     const platform = game.platform;
+    const image = game.thumbnail;
+    const link = game.game_url;
+    const publisher = game.publisher; 
+    const release = game.release_date;
+    const genre = game.genre;
 
-
-    gameList += `
-    <div>
-      <p>Title: ${title}</p>
-      <p>Description: ${description}</p>
-      <p>Platform: ${platform}</p>
-    </div>`;
+    const card = `
+    <div class ="card">
+      <img src="${image}">
+      <div class="card-body">
+        <h5>${title}</h5>
+        <p>Description: ${description}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Platform(s): ${platform}</li>
+          <li class="list-group-item">Genre(s): ${genre}</li>
+          <li class="list-group-item">Release Date: ${release}</li>
+          <li class="list-group-item">Publisher: ${publisher}</li>
+        </ul>
+        <a href="${link}" class="btn btn-primary">Play Now</a>
+      </div>
+    </div>`
+    ;
+    gameList += card;
   }
 
   const showGames = document.querySelector('#showGames');
-  showGames.innerHTML = `Here are some games that match the category ${data[1]}: ${gameList}`;
+  showGames.innerHTML = `<h2>Here are some games that match the category ${data[1]}:<h2>
+  <div class="card-group">
+   ${gameList}
+  </div>`;
 }
 
 

@@ -4,8 +4,10 @@
   <title>Game</Select></title>
 </head>
 <body>
-  <form>  
-      <b></b>  
+  <form>
+    <h4>Automated Game Selector<hr></h4> 
+    <h6>Choose a category and submit to see games<hr>with information that match your selection</h6>
+      <hr>  
       <select id="gameList">
       <option value="" selected disabled> ---Choose Category--- </option>  
       <option value="mmorpg"> MMORPG </option>  
@@ -53,9 +55,11 @@
       <option value="tower-defense"> Tower-Defense </option> </option>  
       <option value="horror"> Horror </option>  
       <option value="mmorts"> MMORTS </option>
-    </select>  
+    </select>
     <button type="submit" id="submit">Submit</button>
-    <p id="showGames"></p> 
+    <div class="game-container">
+      <p id="showGames"></p>
+    </div>
   </form>   
 </body>
 </html>
