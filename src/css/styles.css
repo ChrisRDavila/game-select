@@ -36,6 +36,7 @@ p#showGames {
   font-size: 10px;
   margin-top: 20px;
   font-weight: bold;
+  animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
